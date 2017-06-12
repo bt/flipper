@@ -59,7 +59,6 @@ function writeData(data) {
   stats.timestamp = Date.now();
   statisticsRef.once('value').then(function(snapshot) {
     maximumRate = snapshot.val().maximumRate || 0;
-    console.log("update",maximumRate, stats.ethbtc);
     if (maximumRate < stats.ethbtc) {
       statisticsRef.set(
       {
